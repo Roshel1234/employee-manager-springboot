@@ -2,6 +2,7 @@ package com.example.employeemanager.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.employeemanager.model.Employee;
+import java.util.List;
 
 public interface EmployeeRepository
         extends JpaRepository<Employee, Long> {
@@ -9,4 +10,6 @@ public interface EmployeeRepository
     boolean existsByEmail(String email);
 
     boolean existsByEmailAndIdNot(String email, Long id);
+
+    List<Employee> findByFullNameContainingIgnoreCase(String keyword);
 }

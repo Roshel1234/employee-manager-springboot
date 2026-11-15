@@ -41,4 +41,13 @@ public class EmployeeService {
     public boolean emailExistsForOtherEmployee(String email, Long id) {
         return employeeRepository.existsByEmailAndIdNot(email, id);
     }
+public List<Employee> searchByName(String keyword) {
+    if (keyword == null || keyword.isBlank()) {
+        return employeeRepository.findAll();
+    }
+
+    return employeeRepository
+            .findByFullNameContainingIgnoreCase(keyword.trim());
+}
+
 }

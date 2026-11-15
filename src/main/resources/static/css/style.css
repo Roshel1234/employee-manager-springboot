@@ -240,4 +240,22 @@ tbody tr:hover {
     .section-header {
         flex-wrap: wrap;
     }
+
+    .search-form {
+    margin-bottom: 22px;
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.search-form .actions {
+    flex-wrap: wrap;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 180px;
+}
 }

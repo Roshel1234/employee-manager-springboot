@@ -27,9 +27,14 @@ public class EmployeeController {
 
     // Show the form and employee list
     @GetMapping("/employees")
-    public String listEmployees(Model model) {
+    public String listEmployees(
+            @RequestParam(name = "keyword", required = false) String keyword,
+            Model model) {
+
         model.addAttribute("employee", new Employee());
-        model.addAttribute("employees", employeeService.findAll());
+        model.addAttribute("employees", employeeService.searchByName(keyword));
+        model.addAttribute("keyword", keyword);
+
         return "employees";
     }
 
