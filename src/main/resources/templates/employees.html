@@ -69,6 +69,25 @@
                 </span>
             </div>
 
+            <form th:action="@{/employees}" method="get" class="search-form">
+    <label for="keyword">Search employees by name</label>
+
+    <div class="actions">
+        <input id="keyword"
+               type="search"
+               name="keyword"
+               th:value="${keyword}"
+               placeholder="Enter employee name">
+
+        <button type="submit" class="btn btn-primary">
+            Search
+        </button>
+
+        <a th:href="@{/employees}" class="btn btn-secondary">
+            Clear
+        </a>
+    </div>
+</form>
             <div class="table-wrapper">
                 <table>
                     <thead>
